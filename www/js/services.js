@@ -1,7 +1,7 @@
 angular.module('app.services',[]).factory('Todo', ['$http', 'PARSE_CREDENTIALS', function($http, PARSE_CREDENTIALS){
   return {
     getAll: function(){
-      return $htp.get('https://api.parse.com/1/classes/Todo', {
+      return $http.get('https://api.parse.com/1/classes/Todo', {
         headers: {
           'X-Parse-Application-Id': PARSE_CREDENTIALS.APP_ID,
           'X-Parse-REST-API-Key':PARSE_CREDENTIALS.REST_API_KEY,
@@ -9,7 +9,7 @@ angular.module('app.services',[]).factory('Todo', ['$http', 'PARSE_CREDENTIALS',
       });
     },
     get: function(id){
-      reutrn $http.get('https://api.parse.com/1/classes/Todo' + id, {
+      return $http.get('https://api.parse.com/1/classes/Todo' + id, {
         headers: {
           'X-Parse-Application-Id': PARSE_CREDENTIALS.APP_ID,
           'X-Parse-REST-API-Key':PARSE_CREDENTIALS.REST_API_KEY,
@@ -17,7 +17,7 @@ angular.module('app.services',[]).factory('Todo', ['$http', 'PARSE_CREDENTIALS',
       });
     },
     create: function(data){
-      return $http.get('https://api.parse.com/1/classes/Todo', data, {
+      return $http.post('https://api.parse.com/1/classes/Todo', data, {
         headers: {
           'X-Parse-Application-Id': PARSE_CREDENTIALS.APP_ID,
           'X-Parse-REST-API-Key':PARSE_CREDENTIALS.REST_API_KEY,
