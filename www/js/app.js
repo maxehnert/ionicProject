@@ -38,4 +38,10 @@ angular.module('app', ['ionic', 'app.controllers', 'app.services' ])
     controller: 'TodoEditController',
     templateUrl: 'views/edit-todo.html'
   });
-});
+}).constant('PARSE_HEADERS', {
+    headers: {
+    'X-Parse-Application-Id':      'BD19p8F7u7o7GqBi0rtVBxKycM5ldMCfFVJjBXoR',
+    'X-Parse-REST-API-Key': 'vxBSZAkf3o1iYRM5WBdL1BwFHykfNatTXWHZmxuW',
+    'Content-Type': 'application/json'
+    }
+}).constant('PARSE_URI', 'https://api.parse.com/1/classes/Todo/');
